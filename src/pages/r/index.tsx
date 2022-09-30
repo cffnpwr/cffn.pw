@@ -28,48 +28,118 @@ const Home: NextPage = () => {
   const MotionDiv = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
+  const MotionImage = chakra(motion.img, {
+    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
+  });
 
   return (
     <>
       <Head>
         <title>cffn.pw/r</title>
       </Head>
-      <Box 
-        backgroundColor='blackAlpha.200'
-        py='8'
+      <Flex
         h='100vh'
         w='100vw'
-        display='flex'
         justifyContent='end'
       >
-        <MotionDiv
-          position='absolute'
-          right='0'
-          top='0'
+        <Box
+          w='100%'
           h='100%'
-          backgroundColor='white'
-          clipPath='polygon(0% 0%, calc(100vw * 0.14) 100%, 100% 100%, 100% 0%)'
-          variants={{
-            hidden: {
-              width: '0%',
-            },
-            shown: {
-              width: '70%',
-            },
-          }}
-          //  @ts-ignore: framer-motionのあれ
-          transition={{
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          initial='hidden'
-          animate='shown'
-          exit='hidden'
-        />
+          position='absolute'
+        >
+          <MotionImage 
+            src='/cffnpwr_logo.png'
+            alt='backgroungImage' 
+            position='absolute'
+            bottom='0'
+            left='0'
+            h='50%'
+            // objectFit='contain'
+            filter='blur(5px)'
+            variants={{
+              hidden: {
+                filter: 'none',
+              },
+              shown: {
+                filter: 'blur(5px)',
+              },
+            }}
+            //  @ts-ignore: framer-motionのあれ
+            transition={{
+              duration: 0.8,
+              ease: 'easeInOut',
+            }}
+            initial='hidden'
+            animate='shown'
+          />
+        </Box>
+        <Box 
+          filter='drop-shadow(-2px 0px 16px rgba(0, 0, 0, 0.4))'
+          position='fixed'
+          top='0'
+          w='100%'
+          h='100%'
+        >
+          <MotionDiv
+            position='absolute'
+            right='-35%'
+            bottom='-10rem'
+            h='150%'
+            overflow='hidden'
+            backgroundColor='#7b5544'
+            backdropFilter='blur(20px)'
+            variants={{
+              hidden: {
+                width: '0%',
+              },
+              shown: {
+                width: '110%',
+                transform: 'rotate(-39deg) skewY(39deg)',
+              },
+            }}
+            //  @ts-ignore: framer-motionのあれ
+            transition={{
+              duration: 0.8,
+              ease: 'circOut',
+              delay: 0.5,
+            }}
+            initial='hidden'
+            animate='shown'
+            exit='hidden'
+          />
+          <MotionDiv
+            position='absolute'
+            right='-12%'
+            bottom='-2rem'
+            h='150%'
+            overflow='hidden'
+            backgroundColor='whiteAlpha.800'
+            backdropFilter='blur(20px)'
+            variants={{
+              hidden: {
+                width: '0%',
+              },
+              shown: {
+                width: '100%',
+                transform: 'rotate(-13deg) skewY(13deg)',
+              },
+            }}
+            //  @ts-ignore: framer-motionのあれ
+            transition={{
+              duration: 0.8,
+              ease: 'circOut',
+              delay: 0.5,
+            }}
+            initial='hidden'
+            animate='shown'
+            exit='hidden'
+          />
+        </Box>
         <Flex
+          position='relative'
           direction='column'
           align='center'
-          w={{ base: '100%', md: '60%' }}
+          w='70%'
           zIndex='1'
         >
           <Flex
@@ -166,9 +236,22 @@ const Home: NextPage = () => {
                   animate='shown'
                   exit='hidden'
                 >
-                  <ListIcon as={MdInfo} />
-                  <NextLink href='/about' passHref>
-                    <Link>About</Link>
+                  <NextLink href='/r/about' passHref>
+                    <Link
+                      textDecoration='none !important'
+                      color='#000'
+                      backgroundImage='linear-gradient(90deg, #000, #000)'
+                      backgroundRepeat='no-repeat'
+                      backgroundPosition='right bottom'
+                      backgroundSize='0 5px'
+                      transition='background-size 500ms cubic-bezier(0, 1, 0, 1)'
+                      _hover={{
+                        backgroundSize: '100% 5px',
+                      }}
+                    >
+                      <ListIcon as={MdInfo} />
+                      About
+                    </Link>
                   </NextLink>
                 </MotionLi>
     
@@ -198,9 +281,22 @@ const Home: NextPage = () => {
                   animate='shown'
                   exit='hidden'
                 >
-                  <ListIcon as={MdDeveloperBoard} />
-                  <NextLink href='/Works' passHref>
-                    <Link>Works</Link>
+                  <NextLink href='/r/Works' passHref>
+                    <Link
+                      textDecoration='none !important'
+                      color='#000'
+                      backgroundImage='linear-gradient(90deg, #000, #000)'
+                      backgroundRepeat='no-repeat'
+                      backgroundPosition='right bottom'
+                      backgroundSize='0 5px'
+                      transition='background-size 500ms cubic-bezier(0, 1, 0, 1)'
+                      _hover={{
+                        backgroundSize: '100% 5px',
+                      }}
+                    >
+                      <ListIcon as={MdDeveloperBoard} />
+                      Works
+                    </Link>
                   </NextLink>
                 </MotionLi>
     
@@ -230,9 +326,22 @@ const Home: NextPage = () => {
                   animate='shown'
                   exit='hidden'
                 >
-                  <ListIcon as={MdEditNote} />
-                  <NextLink href='https://blog.cffn.pw' passHref>
-                    <Link>Blog</Link>
+                  <NextLink href='/r/blog' passHref>
+                    <Link
+                      textDecoration='none !important'
+                      color='#000'
+                      backgroundImage='linear-gradient(90deg, #000, #000)'
+                      backgroundRepeat='no-repeat'
+                      backgroundPosition='right bottom'
+                      backgroundSize='0 5px'
+                      transition='background-size 500ms cubic-bezier(0, 1, 0, 1)'
+                      _hover={{
+                        backgroundSize: '100% 5px',
+                      }}
+                    >
+                      <ListIcon as={MdEditNote} />
+                      Blog
+                    </Link>
                   </NextLink>
                 </MotionLi>
     
@@ -262,16 +371,29 @@ const Home: NextPage = () => {
                   animate='shown'
                   exit='hidden'
                 >
-                  <ListIcon as={MdLink} />
-                  <NextLink href='/Links' passHref>
-                    <Link>Links</Link>
+                  <NextLink href='/r/Links' passHref>
+                    <Link
+                      textDecoration='none !important'
+                      color='#000'
+                      backgroundImage='linear-gradient(90deg, #000, #000)'
+                      backgroundRepeat='no-repeat'
+                      backgroundPosition='right bottom'
+                      backgroundSize='0 5px'
+                      transition='background-size 500ms cubic-bezier(0, 1, 0, 1)'
+                      _hover={{
+                        backgroundSize: '100% 5px',
+                      }}
+                    >
+                      <ListIcon as={MdLink} />
+                      Links
+                    </Link>
                   </NextLink>
                 </MotionLi>
               </List>
             </Flex>
           </Flex>
         </Flex>
-      </Box>
+      </Flex>
     </>
   );
 };
