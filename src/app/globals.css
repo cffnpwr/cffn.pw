@@ -1,9 +1,9 @@
+@import url("https://koruri.chillout.chat/koruri.css");
+@import url("https://fonts.cdnfonts.com/css/sans-forgetica");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://koruri.chillout.chat/koruri.css");
-@import url("https://fonts.cdnfonts.com/css/sans-forgetica");
 
 h1 {
   @apply text-5xl font-bold;
