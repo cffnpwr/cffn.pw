@@ -9,7 +9,7 @@ RUN corepack enable
 
 FROM common AS build
 
-RUN pnpm i --frozen-lockfile -D
+RUN pnpm i --frozen-lockfile
 
 COPY . .
 
