@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://koruri.chillout.chat/koruri.css");
+@import url("https://fonts.cdnfonts.com/css/sans-forgetica");
+
+h1 {
+  @apply text-5xl font-bold;
+}
+h2 {
+  @apply text-3xl font-bold;
+}
+h3 {
+  @apply text-2xl font-medium;
+}
+ul {
+  @apply m-4 ml-8 list-outside list-disc;
+}
+
+li {
+  @apply my-2;
+}
+
+p {
+  @apply m-4;
+}
+
+.scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
