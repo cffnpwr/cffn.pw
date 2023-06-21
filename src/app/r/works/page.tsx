@@ -20,6 +20,14 @@ const Works = () => {
           のために作ったツール。
           それっぽいテキストをHTMLに変換したり、MarkdownをHTMLに変換したり、自動でルビを振ったりできる。
         </li>
+        <li>
+          <ExternalLink href="https://github.com/cffnpwr/swc-plugin-import-extension-resolver">
+            swc-plugin-import-extension-resolver
+          </ExternalLink>
+          {": "}
+          TypeScriptのトランスパイル時に.tsファイルのパスを.jsに変換するためのSWCプラグイン。
+          これを使うことで、import文の拡張子を省略できるようになる。
+        </li>
       </ul>
     </>
   );
